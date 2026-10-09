@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Góc Phim BL</title>
+  <style>
+    body {
+      margin: 0;
+      background: #101018;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      padding: 22px;
+      background: #21182d;
+      text-align: center;
+    }
+    h1 { margin: 0; color: #f4a8d4; }
+    main { padding: 20px; max-width: 1000px; margin: auto; }
+    .movies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #211f2c;
+      padding: 12px;
+      border-radius: 12px;
+    }
+    .cover {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      background: #393344;
+      border-radius: 8px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: 0;
+      border-radius: 8px;
+      background: #d94e9c;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    video { width: 100%; margin-top: 12px; }
+    .player { display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Góc Phim BL</h1>
+    <p>Những câu chuyện tình yêu đáng nhớ</p>
+  </header>
+
+  <main>
+    <h2>Phim mới cập nhật</h2>
+    <div class="movies">
+      <article class="card">
+        <img class="cover"
+          src="cover.jpg"
+          alt="Ảnh bìa phim">
+
+        <h3>Tên bộ phim đầu tiên</h3>
+        <p>Phim tình cảm · Vietsub/Lồng tiếng Việt</p>
+
+        <button onclick="playMovie(this)">
+          ▶ Xem phim
+        </button>
+
+        <div class="player">
+          <video controls playsinline preload="none">
+            <source src="DAN_LINK_VIDEO_MP4_VAO_DAY"
+                    type="video/mp4">
+            Trình duyệt không hỗ trợ video.
+          </video>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <script>
+    function playMovie(button) {
+      const player = button.nextElementSibling;
+      player.style.display = "block";
+      button.style.display = "none";
+    }
+  </script>
+</body>
+</html>
