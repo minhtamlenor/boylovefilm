@@ -1,93 +1,181 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Góc Phim BL</title>
+  <meta name="theme-color" content="#120f19">
+  <meta name="description" content="Góc Phim BL — khám phá những câu chuyện tình cảm và phim BL đáng nhớ.">
+  <title>Góc Phim BL — Những câu chuyện tình yêu</title>
   <style>
-    body {
-      margin: 0;
-      background: #101018;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-    header {
-      padding: 22px;
-      background: #21182d;
-      text-align: center;
-    }
-    h1 { margin: 0; color: #f4a8d4; }
-    main { padding: 20px; max-width: 1000px; margin: auto; }
-    .movies {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #211f2c;
-      padding: 12px;
-      border-radius: 12px;
-    }
-    .cover {
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      background: #393344;
-      border-radius: 8px;
-    }
-    button {
-      width: 100%;
-      padding: 12px;
-      border: 0;
-      border-radius: 8px;
-      background: #d94e9c;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    video { width: 100%; margin-top: 12px; }
-    .player { display: none; }
+    :root{color-scheme:dark;--bg:#120f19;--panel:#201927;--panel2:#2a2032;--pink:#f08abd;--pink2:#d9579b;--text:#f8f3f8;--muted:#b9adbd;--line:#3c2d43}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at top,#2b1830 0,#120f19 52%);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1120px,calc(100% - 32px));margin-inline:auto}
+    header{border-bottom:1px solid #ffffff12;background:#120f19d9;backdrop-filter:blur(14px);position:sticky;top:0;z-index:5}
+    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-size:1.18rem;font-weight:850;letter-spacing:.2px}.brand span{color:var(--pink)}
+    .nav a:last-child{color:var(--muted);font-size:.92rem}
+    .hero{padding:64px 0 44px;display:grid;grid-template-columns:1.35fr .65fr;gap:28px;align-items:center}
+    .eyebrow{color:var(--pink);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    h1{font-size:clamp(2.3rem,5.6vw,4.5rem);line-height:1.04;letter-spacing:-.045em;margin:14px 0 18px;max-width:720px}
+    .hero p{max-width:610px;color:var(--muted);font-size:1.06rem;margin:0}
+    .hero-art{min-height:230px;border:1px solid #ffffff12;border-radius:24px;background:linear-gradient(145deg,#61314f,#30223e 55%,#171421);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #f7c1e933;border-radius:50%;width:220px;height:220px;transform:rotate(-25deg)}
+    .hero-art:after{width:160px;height:270px;transform:rotate(35deg)}
+    .heart{font-size:5rem;color:#f6b0d7;text-shadow:0 12px 45px #f08abd66;z-index:1}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:12px 0 22px}
+    h2{font-size:1.55rem;margin:0;letter-spacing:-.02em}.section-head p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
+    .search{width:min(270px,100%);background:#1d1724;border:1px solid var(--line);border-radius:12px;padding:11px 13px;color:var(--text);font:inherit;outline:none}
+    .search:focus{border-color:var(--pink)}
+    .movies{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .card{min-width:0;background:linear-gradient(180deg,#241b2b,#1b1622);border:1px solid #ffffff10;border-radius:16px;padding:10px;overflow:hidden;transition:transform .2s,border-color .2s}
+    .card:hover{transform:translateY(-4px);border-color:#f08abd70}
+    .poster{width:100%;aspect-ratio:3/4;border-radius:11px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(145deg,#71405f,#382943 58%,#171521)}
+    .poster:before{content:"";position:absolute;width:70%;aspect-ratio:1;border-radius:50%;border:1px solid #ffffff28;box-shadow:0 0 0 20px #ffffff06,0 0 0 40px #ffffff04}
+    .poster img{position:absolute;width:100%;height:100%;object-fit:cover;inset:0}
+    .poster .symbol{position:relative;z-index:1;font-size:2.5rem;color:#ffe1f1;text-shadow:0 4px 25px #0008}
+    .tag{position:absolute;top:9px;left:9px;z-index:2;border-radius:999px;background:#140f1dcc;border:1px solid #ffffff20;padding:4px 8px;font-size:.68rem;color:#f9d9eb}
+    .card h3{font-size:1rem;line-height:1.35;margin:13px 2px 6px}
+    .desc{min-height:42px;color:var(--muted);font-size:.82rem;margin:0 2px 12px}
+    .play{display:block;width:100%;border:0;border-radius:10px;padding:11px 12px;background:linear-gradient(100deg,var(--pink2),#b84d93);color:#fff;font:inherit;font-weight:750;cursor:pointer;text-align:center}
+    .play:hover{filter:brightness(1.08)}.play:disabled{background:#413545;color:#a99aaa;cursor:not-allowed}
+    .empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:16px;padding:30px;text-align:center;color:var(--muted)}
+    .player-section{margin:36px 0 52px;padding:18px;border-radius:18px;border:1px solid var(--line);background:#17121f}
+    .player-section h2{margin-bottom:6px}.player-section p{color:var(--muted);margin:0 0 14px}
+    video{display:block;width:100%;max-height:72vh;background:#08070b;border-radius:12px}
+    .player-placeholder{border-radius:12px;background:#0e0b13;border:1px dashed #47344c;text-align:center;padding:38px 18px;color:var(--muted)}
+    footer{border-top:1px solid #ffffff12;padding:26px 0 34px;color:var(--muted);font-size:.86rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .footer-links{display:flex;gap:16px;flex-wrap:wrap}.footer-links a:hover{color:var(--pink)}
+    @media(max-width:850px){.movies{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:1fr .55fr}.hero-art{min-height:190px}}
+    @media(max-width:620px){.wrap{width:min(100% - 24px,1120px)}.nav{min-height:60px}.hero{padding:42px 0 32px;grid-template-columns:1fr}.hero-art{display:none}.section-head{align-items:stretch;flex-direction:column}.search{width:100%}.movies{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{padding:8px}.card h3{font-size:.94rem}.desc{font-size:.78rem}.player-section{padding:12px;margin:28px 0 38px}}
   </style>
 </head>
 <body>
   <header>
-    <h1>Góc Phim BL</h1>
-    <p>Những câu chuyện tình yêu đáng nhớ</p>
+    <div class="wrap nav">
+      <a class="brand" href="#" aria-label="Góc Phim BL trang chủ">GÓC PHIM <span>BL</span></a>
+      <a href="#danh-sach">Khám phá phim ↓</a>
+    </div>
   </header>
 
-  <main>
-    <h2>Phim mới cập nhật</h2>
-    <div class="movies">
-      <article class="card">
-        <img class="cover"
-          src="cover.jpg"
-          alt="Ảnh bìa phim">
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Stories that stay with you</div>
+        <h1>Mỗi câu chuyện,<br>một nhịp rung động.</h1>
+        <p>Khám phá những câu chuyện tình cảm BL, những cuộc gặp gỡ bất ngờ và hành trình đến gần nhau hơn — tất cả trong một góc phim nhỏ dành cho bạn.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="heart">♡</div></div>
+    </section>
 
-        <h3>Tên bộ phim đầu tiên</h3>
-        <p>Phim tình cảm · Vietsub/Lồng tiếng Việt</p>
+    <section id="danh-sach">
+      <div class="section-head">
+        <div><h2>Phim mới cập nhật</h2><p>Chọn một bộ phim để xem tại đây.</p></div>
+        <input class="search" id="search" type="search" placeholder="Tìm tên phim..." aria-label="Tìm tên phim">
+      </div>
+      <div class="movies" id="movies" aria-live="polite"></div>
+    </section>
 
-        <button onclick="playMovie(this)">
-          ▶ Xem phim
-        </button>
-
-        <div class="player">
-          <video controls playsinline preload="none">
-            <source src="DAN_LINK_VIDEO_MP4_VAO_DAY"
-                    type="video/mp4">
-            Trình duyệt không hỗ trợ video.
-          </video>
-        </div>
-      </article>
-    </div>
+    <section class="player-section" id="xem-phim">
+      <h2 id="player-title">Khu vực xem phim</h2>
+      <p id="player-note">Chọn phim trong danh sách để mở trình phát.</p>
+      <div id="player-area"><div class="player-placeholder">▶ Video sẽ phát ở đây khi bạn thêm đường dẫn video hợp lệ.</div></div>
+    </section>
   </main>
 
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Góc Phim BL. Nội dung thuộc về chủ sở hữu tương ứng.</span>
+      <nav class="footer-links" aria-label="Liên kết cuối trang"><a href="privacy.html">Chính sách riêng tư</a><a href="#danh-sach">Danh sách phim</a></nav>
+    </div>
+  </footer>
+
   <script>
-    function playMovie(button) {
-      const player = button.nextElementSibling;
-      player.style.display = "block";
-      button.style.display = "none";
+    /*
+      THÊM PHIM MỚI: sao chép một mục trong danh sách bên dưới.
+      poster: URL ảnh bìa (để trống nếu chưa có).
+      video: URL MP4 trực tiếp từ dịch vụ lưu trữ video (để trống đến khi có video).
+      Chỉ đăng phim mà bạn có quyền phát hành hoặc nhúng.
+    */
+    const films = [
+      { title: "Phim BL đầu tiên", genre: "Tình cảm · BL", description: "Thông tin phim sẽ được cập nhật sớm.", poster: "", video: "" },
+      { title: "Một câu chuyện dịu dàng", genre: "Lãng mạn · BL", description: "Những cuộc gặp gỡ có thể thay đổi mọi điều.", poster: "", video: "" },
+      { title: "Hẹn nhau dưới ánh đèn", genre: "Thanh xuân · BL", description: "Một hành trình tình cảm đang chờ bạn khám phá.", poster: "", video: "" },
+      { title: "Khoảng cách gần hơn", genre: "Tình cảm · BL", description: "Đôi khi điều khó nói nhất lại ở gần trái tim.", poster: "", video: "" }
+    ];
+
+    const moviesEl = document.getElementById("movies");
+    const searchEl = document.getElementById("search");
+    const playerTitle = document.getElementById("player-title");
+    const playerNote = document.getElementById("player-note");
+    const playerArea = document.getElementById("player-area");
+
+    function renderMovies(query = "") {
+      const filtered = films.map((film, index) => ({...film, index}))
+        .filter(film => (film.title + " " + film.genre + " " + film.description).toLowerCase().includes(query.trim().toLowerCase()));
+      moviesEl.innerHTML = "";
+      if (!filtered.length) {
+        moviesEl.innerHTML = '<div class="empty">Không tìm thấy phim phù hợp. Thử từ khóa khác nhé.</div>';
+        return;
+      }
+      filtered.forEach(film => {
+        const card = document.createElement("article");
+        card.className = "card";
+        const poster = document.createElement("div");
+        poster.className = "poster";
+        const tag = document.createElement("span");
+        tag.className = "tag";
+        tag.textContent = "BL · TÌNH CẢM";
+        poster.appendChild(tag);
+        if (film.poster) {
+          const img = document.createElement("img");
+          img.src = film.poster;
+          img.alt = "Ảnh bìa " + film.title;
+          img.loading = "lazy";
+          img.onerror = () => img.remove();
+          poster.appendChild(img);
+        } else {
+          const symbol = document.createElement("span");
+          symbol.className = "symbol";
+          symbol.textContent = "♡";
+          poster.appendChild(symbol);
+        }
+        const title = document.createElement("h3");
+        title.textContent = film.title;
+        const desc = document.createElement("p");
+        desc.className = "desc";
+        desc.textContent = film.genre + " · " + film.description;
+        const button = document.createElement("button");
+        button.className = "play";
+        button.type = "button";
+        button.textContent = film.video ? "▶ Xem phim" : "Sắp cập nhật";
+        button.disabled = !film.video;
+        button.addEventListener("click", () => playFilm(film));
+        card.append(poster, title, desc, button);
+        moviesEl.appendChild(card);
+      });
     }
+
+    function playFilm(film) {
+      playerTitle.textContent = film.title;
+      playerNote.textContent = film.genre;
+      playerArea.replaceChildren();
+      const video = document.createElement("video");
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = "metadata";
+      video.src = film.video;
+      video.setAttribute("aria-label", "Video: " + film.title);
+      playerArea.appendChild(video);
+      document.getElementById("xem-phim").scrollIntoView({behavior:"smooth",block:"start"});
+    }
+
+    searchEl.addEventListener("input", () => renderMovies(searchEl.value));
+    document.getElementById("year").textContent = new Date().getFullYear();
+    renderMovies();
   </script>
 </body>
 </html>
