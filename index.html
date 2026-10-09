@@ -75,7 +75,7 @@
     .genre{font-size:.76rem;color:var(--lilac);margin:0 0 8px}
     .desc{min-height:45px;color:var(--muted);font-size:.82rem;margin:0 0 13px}
     .play{display:block;width:100%;border:0;border-radius:12px;padding:11px 12px;background:linear-gradient(100deg,#f5acd1,#d783bd);color:#34182f;font-weight:850;cursor:pointer;text-align:center}
-    .play:hover{filter:brightness(1.08)}.play:disabled{background:#3a2d40;color:#aa9aaf;cursor:not-allowed}
+    .play:hover{filter:brightness(1.08)}.play:disabled{background:#3a2d40;color:#aa9aaf;cursor:not-allowed}.detail-link{display:block;text-align:center;margin-top:8px;padding:8px 10px;border:1px solid #f4a9d535;border-radius:11px;color:#ffd1e8;font-size:.82rem;font-weight:750}.detail-link:hover{background:#f4a9d511;border-color:#f4a9d580}
     .empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:18px;padding:30px;text-align:center;color:var(--muted)}
     .note{margin:18px 0 0;border:1px solid #e9a2cc22;background:#e9a2cc08;border-radius:14px;padding:12px 14px;color:#d7c7da;font-size:.83rem}
     .note strong{color:var(--pink)}
@@ -222,7 +222,11 @@
         button.textContent = film.video ? "▶  Xem phim" : "Sắp cập nhật";
         button.disabled = !film.video;
         button.addEventListener("click", () => playFilm(film));
-        content.append(title, genre, desc, button);
+        const detail = document.createElement("a");
+        detail.className = "detail-link";
+        detail.href = "film.html?id=" + film.index;
+        detail.textContent = "Xem chi tiết ↗";
+        content.append(title, genre, desc, button, detail);
         card.append(poster, content);
         moviesEl.appendChild(card);
       });
