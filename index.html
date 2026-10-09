@@ -3,108 +3,166 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#120f19">
-  <meta name="description" content="Góc Phim BL — khám phá những câu chuyện tình cảm và phim BL đáng nhớ.">
-  <title>Góc Phim BL — Những câu chuyện tình yêu</title>
+  <meta name="theme-color" content="#21152c">
+  <meta name="description" content="Góc Phim BL — một góc nhỏ dành cho những câu chuyện tình yêu dịu dàng, lãng mạn và đầy rung động.">
+  <title>Góc Phim BL — Chạm vào những rung động</title>
   <style>
-    :root{color-scheme:dark;--bg:#120f19;--panel:#201927;--panel2:#2a2032;--pink:#f08abd;--pink2:#d9579b;--text:#f8f3f8;--muted:#b9adbd;--line:#3c2d43}
+    :root{color-scheme:dark;--bg:#17111f;--panel:#24192d;--panel2:#30203a;--pink:#ffb4d7;--pink2:#e77cb5;--lilac:#c8b3ff;--text:#fff7fc;--muted:#c9b9ce;--line:#4b3453;--soft:#f8d7eb}
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:radial-gradient(ellipse at top,#2b1830 0,#120f19 52%);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
-    a{color:inherit;text-decoration:none}
-    .wrap{width:min(1120px,calc(100% - 32px));margin-inline:auto}
-    header{border-bottom:1px solid #ffffff12;background:#120f19d9;backdrop-filter:blur(14px);position:sticky;top:0;z-index:5}
-    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{font-size:1.18rem;font-weight:850;letter-spacing:.2px}.brand span{color:var(--pink)}
-    .nav a:last-child{color:var(--muted);font-size:.92rem}
-    .hero{padding:64px 0 44px;display:grid;grid-template-columns:1.35fr .65fr;gap:28px;align-items:center}
-    .eyebrow{color:var(--pink);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
-    h1{font-size:clamp(2.3rem,5.6vw,4.5rem);line-height:1.04;letter-spacing:-.045em;margin:14px 0 18px;max-width:720px}
-    .hero p{max-width:610px;color:var(--muted);font-size:1.06rem;margin:0}
-    .hero-art{min-height:230px;border:1px solid #ffffff12;border-radius:24px;background:linear-gradient(145deg,#61314f,#30223e 55%,#171421);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-    .hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #f7c1e933;border-radius:50%;width:220px;height:220px;transform:rotate(-25deg)}
-    .hero-art:after{width:160px;height:270px;transform:rotate(35deg)}
-    .heart{font-size:5rem;color:#f6b0d7;text-shadow:0 12px 45px #f08abd66;z-index:1}
-    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:12px 0 22px}
-    h2{font-size:1.55rem;margin:0;letter-spacing:-.02em}.section-head p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
-    .search{width:min(270px,100%);background:#1d1724;border:1px solid var(--line);border-radius:12px;padding:11px 13px;color:var(--text);font:inherit;outline:none}
-    .search:focus{border-color:var(--pink)}
+    html{scroll-behavior:smooth;scroll-padding-top:82px}
+    body{margin:0;background:radial-gradient(ellipse at 15% 0%,#492641 0,transparent 36%),radial-gradient(ellipse at 90% 20%,#2b2148 0,transparent 34%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}button,input{font:inherit}
+    .wrap{width:min(1160px,calc(100% - 36px));margin-inline:auto}
+    header{position:sticky;top:0;z-index:10;border-bottom:1px solid #ffffff12;background:#17111fdd;backdrop-filter:blur(18px)}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:inline-flex;align-items:center;gap:10px;font-size:1.08rem;font-weight:900;letter-spacing:.09em}
+    .brand-mark{width:35px;height:35px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#ffc2df,#d978b2);color:#3a1d36;font-size:1.2rem;box-shadow:0 5px 24px #e77cb533}
+    .brand span:last-child{color:var(--pink)}
+    .nav-right{display:flex;align-items:center;gap:20px;color:var(--muted);font-size:.91rem}
+    .nav-right a:hover,.footer-links a:hover{color:var(--pink)}
+    .nav-cta{border:1px solid #f4acd44a;border-radius:999px;padding:8px 14px;color:var(--pink)!important}
+    .hero{padding:66px 0 54px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:42px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #f6b3d52e;background:#f6b3d50b;border-radius:999px;padding:6px 12px;color:var(--pink);font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .eyebrow:before{content:"✦";font-size:.85rem}
+    h1{font-size:clamp(2.7rem,5.5vw,5rem);line-height:1.02;letter-spacing:-.055em;margin:20px 0 20px;max-width:650px}
+    h1 em{font-style:normal;background:linear-gradient(100deg,#ffd1e8,#d6c2ff);background-clip:text;-webkit-background-clip:text;color:transparent}
+    .hero-copy{max-width:570px;color:var(--muted);font-size:1.06rem;margin:0}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+    .primary-link,.secondary-link{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:12px 18px;font-weight:800;font-size:.92rem}
+    .primary-link{background:linear-gradient(110deg,#f5a9cf,#d87dbd);color:#34182f;box-shadow:0 8px 28px #df79b52e}
+    .primary-link:hover{filter:brightness(1.08);transform:translateY(-1px)}
+    .secondary-link{border:1px solid #ffffff20;color:var(--text);background:#ffffff06}
+    .secondary-link:hover{border-color:#ffb4d780}
+    .hero-art{min-height:360px;position:relative;display:grid;place-items:center;isolation:isolate}
+    .glow{position:absolute;width:76%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#ed9ac83b,transparent 68%);filter:blur(8px);z-index:-2}
+    .art-card{width:min(360px,85%);aspect-ratio:4/4.5;border:1px solid #ffffff27;border-radius:34px;position:relative;overflow:hidden;background:linear-gradient(145deg,#80506f 0%,#493353 47%,#242039 100%);box-shadow:0 25px 80px #08050e80;transform:rotate(2deg)}
+    .art-card:before{content:"";position:absolute;inset:10% 12% 8%;border:1px solid #ffdfef55;border-radius:48% 48% 42% 42%;transform:rotate(-8deg)}
+    .art-card:after{content:"";position:absolute;width:180%;height:65%;left:-40%;bottom:-29%;border-radius:50%;background:linear-gradient(120deg,#d98db64a,#9c83d54a);filter:blur(2px)}
+    .moon{position:absolute;width:115px;height:115px;right:14%;top:12%;border-radius:50%;background:linear-gradient(135deg,#ffe3f2,#eab8ed 55%,#bd9bdf);box-shadow:0 0 60px #ffc4e733}
+    .silhouette{position:absolute;bottom:14%;width:34%;height:52%;border-radius:48% 48% 15% 15%;background:linear-gradient(160deg,#24182e,#171321);z-index:1}
+    .silhouette:before{content:"";position:absolute;width:47%;aspect-ratio:1;border-radius:50%;top:-18%;left:26%;background:linear-gradient(145deg,#32203a,#171321)}
+    .silhouette.one{left:20%;transform:rotate(-8deg)}
+    .silhouette.two{right:17%;height:45%;bottom:14%;transform:rotate(9deg);background:linear-gradient(160deg,#39243e,#191421)}
+    .art-caption{position:absolute;bottom:12%;left:0;right:0;text-align:center;z-index:2;font-family:Georgia,serif;font-size:clamp(1.4rem,2.8vw,2rem);font-style:italic;color:#ffe6f4;text-shadow:0 2px 12px #211326}
+    .float-heart{position:absolute;color:#ffc7e5;font-size:2rem;text-shadow:0 0 24px #f58dc9;animation:float 4s ease-in-out infinite}
+    .float-heart.a{left:5%;top:24%}.float-heart.b{right:2%;bottom:20%;font-size:1.3rem;animation-delay:-2s}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .divider-glow{height:1px;background:linear-gradient(90deg,transparent,#e99ac94d,transparent)}
+    .section{padding:44px 0 20px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:22px}
+    .section-kicker{color:var(--pink);font-size:.73rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase;margin-bottom:5px}
+    h2{font-size:clamp(1.45rem,3vw,2rem);line-height:1.2;letter-spacing:-.035em;margin:0}
+    .section-head p{margin:7px 0 0;color:var(--muted);font-size:.91rem}
+    .search{width:min(280px,100%);background:#211728;border:1px solid var(--line);border-radius:14px;padding:12px 14px;color:var(--text);outline:none}
+    .search:focus{border-color:var(--pink);box-shadow:0 0 0 3px #f5a9cf17}
+    .filters{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 22px}
+    .filter{border:1px solid #ffffff1c;border-radius:999px;padding:8px 14px;color:var(--muted);background:#ffffff05;cursor:pointer;font-size:.84rem}
+    .filter:hover,.filter.active{background:#f4a9d51b;border-color:#f4a9d56b;color:#ffd1e8}
     .movies{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-    .card{min-width:0;background:linear-gradient(180deg,#241b2b,#1b1622);border:1px solid #ffffff10;border-radius:16px;padding:10px;overflow:hidden;transition:transform .2s,border-color .2s}
-    .card:hover{transform:translateY(-4px);border-color:#f08abd70}
-    .poster{width:100%;aspect-ratio:3/4;border-radius:11px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(145deg,#71405f,#382943 58%,#171521)}
-    .poster:before{content:"";position:absolute;width:70%;aspect-ratio:1;border-radius:50%;border:1px solid #ffffff28;box-shadow:0 0 0 20px #ffffff06,0 0 0 40px #ffffff04}
-    .poster img{position:absolute;width:100%;height:100%;object-fit:cover;inset:0}
-    .poster .symbol{position:relative;z-index:1;font-size:2.5rem;color:#ffe1f1;text-shadow:0 4px 25px #0008}
-    .tag{position:absolute;top:9px;left:9px;z-index:2;border-radius:999px;background:#140f1dcc;border:1px solid #ffffff20;padding:4px 8px;font-size:.68rem;color:#f9d9eb}
-    .card h3{font-size:1rem;line-height:1.35;margin:13px 2px 6px}
-    .desc{min-height:42px;color:var(--muted);font-size:.82rem;margin:0 2px 12px}
-    .play{display:block;width:100%;border:0;border-radius:10px;padding:11px 12px;background:linear-gradient(100deg,var(--pink2),#b84d93);color:#fff;font:inherit;font-weight:750;cursor:pointer;text-align:center}
-    .play:hover{filter:brightness(1.08)}.play:disabled{background:#413545;color:#a99aaa;cursor:not-allowed}
-    .empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:16px;padding:30px;text-align:center;color:var(--muted)}
-    .player-section{margin:36px 0 52px;padding:18px;border-radius:18px;border:1px solid var(--line);background:#17121f}
-    .player-section h2{margin-bottom:6px}.player-section p{color:var(--muted);margin:0 0 14px}
-    video{display:block;width:100%;max-height:72vh;background:#08070b;border-radius:12px}
-    .player-placeholder{border-radius:12px;background:#0e0b13;border:1px dashed #47344c;text-align:center;padding:38px 18px;color:var(--muted)}
-    footer{border-top:1px solid #ffffff12;padding:26px 0 34px;color:var(--muted);font-size:.86rem}
-    .footer-inner{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-    .footer-links{display:flex;gap:16px;flex-wrap:wrap}.footer-links a:hover{color:var(--pink)}
-    @media(max-width:850px){.movies{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:1fr .55fr}.hero-art{min-height:190px}}
-    @media(max-width:620px){.wrap{width:min(100% - 24px,1120px)}.nav{min-height:60px}.hero{padding:42px 0 32px;grid-template-columns:1fr}.hero-art{display:none}.section-head{align-items:stretch;flex-direction:column}.search{width:100%}.movies{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{padding:8px}.card h3{font-size:.94rem}.desc{font-size:.78rem}.player-section{padding:12px;margin:28px 0 38px}}
+    .card{min-width:0;border:1px solid #ffffff12;border-radius:20px;padding:10px;background:linear-gradient(155deg,#2b1e34dd,#1e1728);overflow:hidden;transition:transform .22s,border-color .22s,box-shadow .22s}
+    .card:hover{transform:translateY(-5px);border-color:#f4a9d55c;box-shadow:0 18px 42px #08050d40}
+    .poster{width:100%;aspect-ratio:3/4;border-radius:14px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(145deg,#a76a91,#574063 56%,#28233e)}
+    .poster:before{content:"";position:absolute;width:68%;aspect-ratio:1;border:1px solid #fff5;border-radius:50%;box-shadow:0 0 0 17px #ffffff08,0 0 0 36px #ffffff05}
+    .poster:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#211528a8)}
+    .poster img{position:absolute;width:100%;height:100%;object-fit:cover;inset:0;z-index:1}
+    .poster .symbol{position:relative;z-index:2;font-size:3rem;color:#ffe2f2;text-shadow:0 5px 24px #3b1c38}
+    .poster-2{background:linear-gradient(145deg,#b883a5,#635079 55%,#28233e)}
+    .poster-3{background:linear-gradient(145deg,#b48a92,#63516e 55%,#29223c)}
+    .poster-4{background:linear-gradient(145deg,#9e82ba,#55406e 55%,#22203b)}
+    .tag{position:absolute;top:10px;left:10px;z-index:3;border:1px solid #ffffff26;border-radius:999px;background:#21162ac9;padding:5px 9px;font-size:.66rem;font-weight:800;letter-spacing:.04em;color:#ffe0f0}
+    .card-content{padding:2px 3px 3px}
+    .card h3{font-size:1rem;line-height:1.35;margin:13px 0 5px}
+    .genre{font-size:.76rem;color:var(--lilac);margin:0 0 8px}
+    .desc{min-height:45px;color:var(--muted);font-size:.82rem;margin:0 0 13px}
+    .play{display:block;width:100%;border:0;border-radius:12px;padding:11px 12px;background:linear-gradient(100deg,#f5acd1,#d783bd);color:#34182f;font-weight:850;cursor:pointer;text-align:center}
+    .play:hover{filter:brightness(1.08)}.play:disabled{background:#3a2d40;color:#aa9aaf;cursor:not-allowed}
+    .empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:18px;padding:30px;text-align:center;color:var(--muted)}
+    .note{margin:18px 0 0;border:1px solid #e9a2cc22;background:#e9a2cc08;border-radius:14px;padding:12px 14px;color:#d7c7da;font-size:.83rem}
+    .note strong{color:var(--pink)}
+    .player-section{margin:42px 0 60px;padding:22px;border-radius:22px;border:1px solid #f3acd32a;background:linear-gradient(145deg,#251a2e,#191320)}
+    .player-section h2{margin-bottom:6px}.player-section>p{color:var(--muted);margin:0 0 16px}
+    video{display:block;width:100%;max-height:72vh;background:#09070c;border-radius:14px}
+    .player-placeholder{border-radius:15px;background:#120e18;border:1px dashed #67466b;text-align:center;padding:42px 18px;color:var(--muted)}
+    .placeholder-icon{font-size:2rem;color:var(--pink);display:block;margin-bottom:8px}
+    footer{border-top:1px solid #ffffff12;padding:26px 0 34px;color:var(--muted);font-size:.84rem;background:#100c16a6}
+    .footer-inner{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+    @media(max-width:900px){.movies{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{gap:18px}.hero-art{min-height:300px}}
+    @media(max-width:650px){.wrap{width:calc(100% - 24px)}.nav{min-height:62px}.brand{font-size:.95rem}.brand-mark{width:31px;height:31px}.nav-right{gap:12px;font-size:.82rem}.nav-cta{padding:7px 10px}.hero{padding:42px 0 34px;grid-template-columns:1fr;gap:12px}.hero-art{min-height:260px}.art-card{width:230px}.moon{width:85px;height:85px}h1{font-size:clamp(2.6rem,12vw,3.8rem)}.hero-copy{font-size:.98rem}.section{padding-top:34px}.section-head{align-items:stretch;flex-direction:column}.search{width:100%}.movies{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{padding:8px;border-radius:16px}.poster{border-radius:11px}.card h3{font-size:.91rem}.desc{font-size:.77rem;min-height:58px}.play{font-size:.83rem;padding:10px 7px}.player-section{padding:13px;margin:30px 0 40px}.footer-inner{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
   </style>
 </head>
 <body>
   <header>
     <div class="wrap nav">
-      <a class="brand" href="#" aria-label="Góc Phim BL trang chủ">GÓC PHIM <span>BL</span></a>
-      <a href="#danh-sach">Khám phá phim ↓</a>
+      <a class="brand" href="#" aria-label="Góc Phim BL trang chủ"><span class="brand-mark">♡</span><span>GÓC PHIM <span>BL</span></span></a>
+      <nav class="nav-right" aria-label="Điều hướng chính"><a href="#danh-sach">Khám phá</a><a class="nav-cta" href="#danh-sach">Tìm câu chuyện ♡</a></nav>
     </div>
   </header>
 
   <main class="wrap">
     <section class="hero">
       <div>
-        <div class="eyebrow">Stories that stay with you</div>
-        <h1>Mỗi câu chuyện,<br>một nhịp rung động.</h1>
-        <p>Khám phá những câu chuyện tình cảm BL, những cuộc gặp gỡ bất ngờ và hành trình đến gần nhau hơn — tất cả trong một góc phim nhỏ dành cho bạn.</p>
+        <div class="eyebrow">Một góc nhỏ của những rung động</div>
+        <h1>Có những ánh nhìn<br>kể nên <em>chuyện tình.</em></h1>
+        <p class="hero-copy">Chậm lại một chút, chọn một câu chuyện và để trái tim được rung động. Góc Phim BL dành cho những bộ phim tình cảm dịu dàng, những cuộc gặp gỡ bất ngờ và hành trình hai người dần bước về phía nhau.</p>
+        <div class="hero-actions"><a class="primary-link" href="#danh-sach">Khám phá danh sách <span>↗</span></a><a class="secondary-link" href="#gioi-thieu">Về Góc Phim BL</a></div>
       </div>
-      <div class="hero-art" aria-hidden="true"><div class="heart">♡</div></div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="glow"></div><span class="float-heart a">♡</span><span class="float-heart b">✦</span>
+        <div class="art-card"><div class="moon"></div><div class="silhouette one"></div><div class="silhouette two"></div><div class="art-caption">a story about us</div></div>
+      </div>
     </section>
 
-    <section id="danh-sach">
+    <div class="divider-glow"></div>
+
+    <section class="section" id="danh-sach">
       <div class="section-head">
-        <div><h2>Phim mới cập nhật</h2><p>Chọn một bộ phim để xem tại đây.</p></div>
-        <input class="search" id="search" type="search" placeholder="Tìm tên phim..." aria-label="Tìm tên phim">
+        <div><div class="section-kicker">Your next favorite story</div><h2>Những câu chuyện đang chờ</h2><p>Danh mục mẫu đã sẵn sàng — phim sẽ được bổ sung sau.</p></div>
+        <input class="search" id="search" type="search" placeholder="⌕  Tìm tên phim..." aria-label="Tìm tên phim">
+      </div>
+      <div class="filters" aria-label="Lọc theo thể loại">
+        <button class="filter active" type="button" data-filter="all">Tất cả</button>
+        <button class="filter" type="button" data-filter="Tình cảm">Tình cảm</button>
+        <button class="filter" type="button" data-filter="Thanh xuân">Thanh xuân</button>
+        <button class="filter" type="button" data-filter="Lãng mạn">Lãng mạn</button>
       </div>
       <div class="movies" id="movies" aria-live="polite"></div>
+      <div class="note"><strong>♡ Lưu ý:</strong> Các thẻ bên dưới hiện là nội dung minh họa cho giao diện, chưa phải phim có thể phát. Khi có phim và đường dẫn video hợp lệ, nút xem sẽ được bật.</div>
     </section>
 
     <section class="player-section" id="xem-phim">
-      <h2 id="player-title">Khu vực xem phim</h2>
-      <p id="player-note">Chọn phim trong danh sách để mở trình phát.</p>
-      <div id="player-area"><div class="player-placeholder">▶ Video sẽ phát ở đây khi bạn thêm đường dẫn video hợp lệ.</div></div>
+      <div class="section-kicker">Settle in and enjoy</div>
+      <h2 id="player-title">Góc xem phim</h2>
+      <p id="player-note">Khi có video, bạn có thể xem ngay tại đây.</p>
+      <div id="player-area"><div class="player-placeholder"><span class="placeholder-icon">♡</span>Chỗ ngồi của bạn đã sẵn sàng.<br>Video sẽ xuất hiện ở đây khi được thêm vào website.</div></div>
+    </section>
+
+    <section class="section" id="gioi-thieu" style="padding-top:0;padding-bottom:48px">
+      <div class="section-kicker">A little note from us</div><h2>Một nơi dành cho những rung động dịu dàng.</h2>
+      <p style="max-width:720px;color:var(--muted);margin:12px 0 0">Góc Phim BL đang được chuẩn bị để mang đến một không gian xem phim lãng mạn, dễ sử dụng trên cả điện thoại và máy tính. Nội dung phim sẽ được cập nhật khi có nguồn phát phù hợp và quyền đăng tải cần thiết.</p>
     </section>
   </main>
 
   <footer>
     <div class="wrap footer-inner">
-      <span>© <span id="year"></span> Góc Phim BL. Nội dung thuộc về chủ sở hữu tương ứng.</span>
-      <nav class="footer-links" aria-label="Liên kết cuối trang"><a href="privacy.html">Chính sách riêng tư</a><a href="#danh-sach">Danh sách phim</a></nav>
+      <span>© <span id="year"></span> Góc Phim BL · Một góc nhỏ cho những câu chuyện tình yêu.</span>
+      <nav class="footer-links" aria-label="Liên kết cuối trang"><a href="privacy.html">Chính sách riêng tư</a><a href="#danh-sach">Danh sách phim ↑</a></nav>
     </div>
   </footer>
 
   <script>
     /*
       THÊM PHIM MỚI: sao chép một mục trong danh sách bên dưới.
-      poster: URL ảnh bìa (để trống nếu chưa có).
-      video: URL MP4 trực tiếp từ dịch vụ lưu trữ video (để trống đến khi có video).
+      poster: URL ảnh bìa.
+      video: URL video trực tiếp do dịch vụ lưu trữ cung cấp.
+      category dùng để bộ lọc thể loại hoạt động.
       Chỉ đăng phim mà bạn có quyền phát hành hoặc nhúng.
     */
     const films = [
-      { title: "Phim BL đầu tiên", genre: "Tình cảm · BL", description: "Thông tin phim sẽ được cập nhật sớm.", poster: "", video: "" },
-      { title: "Một câu chuyện dịu dàng", genre: "Lãng mạn · BL", description: "Những cuộc gặp gỡ có thể thay đổi mọi điều.", poster: "", video: "" },
-      { title: "Hẹn nhau dưới ánh đèn", genre: "Thanh xuân · BL", description: "Một hành trình tình cảm đang chờ bạn khám phá.", poster: "", video: "" },
-      { title: "Khoảng cách gần hơn", genre: "Tình cảm · BL", description: "Đôi khi điều khó nói nhất lại ở gần trái tim.", poster: "", video: "" }
+      { title: "Phim BL đầu tiên", category: "Tình cảm", genre: "Tình cảm · BL", description: "Thẻ mẫu — thông tin phim sẽ được cập nhật sau.", poster: "", video: "" },
+      { title: "Một câu chuyện dịu dàng", category: "Lãng mạn", genre: "Lãng mạn · BL", description: "Thẻ mẫu — những cuộc gặp gỡ có thể thay đổi mọi điều.", poster: "", video: "" },
+      { title: "Hẹn nhau dưới ánh đèn", category: "Thanh xuân", genre: "Thanh xuân · BL", description: "Thẻ mẫu — một câu chuyện đang chờ được giới thiệu.", poster: "", video: "" },
+      { title: "Khoảng cách gần hơn", category: "Tình cảm", genre: "Tình cảm · BL", description: "Thẻ mẫu — đôi khi điều khó nói nhất ở rất gần trái tim.", poster: "", video: "" }
     ];
 
     const moviesEl = document.getElementById("movies");
@@ -112,23 +170,28 @@
     const playerTitle = document.getElementById("player-title");
     const playerNote = document.getElementById("player-note");
     const playerArea = document.getElementById("player-area");
+    let activeFilter = "all";
 
     function renderMovies(query = "") {
       const filtered = films.map((film, index) => ({...film, index}))
-        .filter(film => (film.title + " " + film.genre + " " + film.description).toLowerCase().includes(query.trim().toLowerCase()));
-      moviesEl.innerHTML = "";
+        .filter(film => (activeFilter === "all" || film.category === activeFilter) &&
+          (film.title + " " + film.genre + " " + film.description).toLowerCase().includes(query.trim().toLowerCase()));
+      moviesEl.replaceChildren();
       if (!filtered.length) {
-        moviesEl.innerHTML = '<div class="empty">Không tìm thấy phim phù hợp. Thử từ khóa khác nhé.</div>';
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "Chưa tìm thấy nội dung phù hợp. Bạn thử từ khóa khác nhé.";
+        moviesEl.appendChild(empty);
         return;
       }
       filtered.forEach(film => {
         const card = document.createElement("article");
         card.className = "card";
         const poster = document.createElement("div");
-        poster.className = "poster";
+        poster.className = "poster poster-" + (film.index + 1);
         const tag = document.createElement("span");
         tag.className = "tag";
-        tag.textContent = "BL · TÌNH CẢM";
+        tag.textContent = "SẮP CẬP NHẬT";
         poster.appendChild(tag);
         if (film.poster) {
           const img = document.createElement("img");
@@ -143,18 +206,24 @@
           symbol.textContent = "♡";
           poster.appendChild(symbol);
         }
+        const content = document.createElement("div");
+        content.className = "card-content";
         const title = document.createElement("h3");
         title.textContent = film.title;
+        const genre = document.createElement("p");
+        genre.className = "genre";
+        genre.textContent = film.genre;
         const desc = document.createElement("p");
         desc.className = "desc";
-        desc.textContent = film.genre + " · " + film.description;
+        desc.textContent = film.description;
         const button = document.createElement("button");
         button.className = "play";
         button.type = "button";
-        button.textContent = film.video ? "▶ Xem phim" : "Sắp cập nhật";
+        button.textContent = film.video ? "▶  Xem phim" : "Sắp cập nhật";
         button.disabled = !film.video;
         button.addEventListener("click", () => playFilm(film));
-        card.append(poster, title, desc, button);
+        content.append(title, genre, desc, button);
+        card.append(poster, content);
         moviesEl.appendChild(card);
       });
     }
@@ -174,6 +243,11 @@
     }
 
     searchEl.addEventListener("input", () => renderMovies(searchEl.value));
+    document.querySelectorAll(".filter").forEach(button => button.addEventListener("click", () => {
+      activeFilter = button.dataset.filter;
+      document.querySelectorAll(".filter").forEach(item => item.classList.toggle("active", item === button));
+      renderMovies(searchEl.value);
+    }));
     document.getElementById("year").textContent = new Date().getFullYear();
     renderMovies();
   </script>
