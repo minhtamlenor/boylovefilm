@@ -4,7 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#21152c">
-  <meta name="description" content="Thông tin phim tại Góc Phim BL — không gian dành cho những câu chuyện tình yêu dịu dàng.">
+  <meta name="description" content="Thông tin, thể loại và trạng thái cập nhật của các câu chuyện phim BL tại Góc Phim BL.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Góc Phim BL">
+  <meta property="og:title" content="Chi tiết phim — Góc Phim BL">
+  <meta property="og:description" content="Khám phá thông tin phim và trạng thái cập nhật tại Góc Phim BL.">
+  <meta name="twitter:card" content="summary">
   <title>Chi tiết phim — Góc Phim BL</title>
   <style>
     :root{color-scheme:dark;--bg:#17111f;--panel:#24192d;--pink:#ffb4d7;--lilac:#c8b3ff;--text:#fff7fc;--muted:#c9b9ce;--line:#4b3453}
@@ -80,6 +86,9 @@
     playerArea.textContent = "Chưa có nội dung để phát.";
   } else {
     document.title = film.title + " — Góc Phim BL";
+    document.querySelector('meta[property="og:title"]').setAttribute("content", document.title);
+    document.querySelector('meta[property="og:description"]').setAttribute("content", film.description);
+    document.querySelector('meta[name="description"]').setAttribute("content", (film.description || "Thông tin phim BL") + " — Góc Phim BL");
     title.textContent = film.title;
     document.getElementById("crumb-title").textContent = film.title;
     document.getElementById("film-genre").textContent = film.genre;
