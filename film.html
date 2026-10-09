@@ -57,14 +57,10 @@
   <section class="player" id="trinh-phat"><h2 id="player-title">Khu vực xem phim</h2><p id="player-note">Video sẽ được phát tại đây khi có đường dẫn video hợp lệ.</p><div id="player-area" class="player-placeholder"><span class="heart">♡</span>Hiện chưa có video cho phim này.</div></section>
 </main>
 <footer><div class="wrap foot"><span>© <span id="year"></span> Góc Phim BL · Một góc nhỏ cho những câu chuyện tình yêu.</span><a href="privacy.html">Chính sách riêng tư</a></div></footer>
+<script src="films.js"></script>
 <script>
-  // Đồng bộ danh sách mẫu với trang chủ. Khi thêm phim, hãy cập nhật cả hai danh sách.
-  const films = [
-    { title: "Phim BL đầu tiên", category: "Tình cảm", genre: "Tình cảm · BL", description: "Thẻ mẫu — thông tin phim sẽ được cập nhật sau.", poster: "", video: "" },
-    { title: "Một câu chuyện dịu dàng", category: "Lãng mạn", genre: "Lãng mạn · BL", description: "Thẻ mẫu — những cuộc gặp gỡ có thể thay đổi mọi điều.", poster: "", video: "" },
-    { title: "Hẹn nhau dưới ánh đèn", category: "Thanh xuân", genre: "Thanh xuân · BL", description: "Thẻ mẫu — một câu chuyện đang chờ được giới thiệu.", poster: "", video: "" },
-    { title: "Khoảng cách gần hơn", category: "Tình cảm", genre: "Tình cảm · BL", description: "Thẻ mẫu — đôi khi điều khó nói nhất ở rất gần trái tim.", poster: "", video: "" }
-  ];
+  // Dùng chung dữ liệu với trang chủ; chỉ cần cập nhật films.js khi thêm phim.
+  const films = window.GOC_PHIM_BL_FILMS || [];
   const params = new URLSearchParams(window.location.search);
   const id = Number.parseInt(params.get("id") || "0", 10);
   const film = Number.isInteger(id) && id >= 0 && id < films.length ? films[id] : null;
