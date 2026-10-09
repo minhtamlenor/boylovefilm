@@ -150,20 +150,14 @@
     </div>
   </footer>
 
+  <script src="films.js"></script>
   <script>
     /*
-      THÊM PHIM MỚI: sao chép một mục trong danh sách bên dưới.
-      poster: URL ảnh bìa.
-      video: URL video trực tiếp do dịch vụ lưu trữ cung cấp.
-      category dùng để bộ lọc thể loại hoạt động.
+      Danh sách phim nằm trong films.js để trang chủ và trang chi tiết luôn đồng bộ.
+      Khi thêm phim, chỉ sửa films.js; poster là URL ảnh bìa, video là URL video trực tiếp.
       Chỉ đăng phim mà bạn có quyền phát hành hoặc nhúng.
     */
-    const films = [
-      { title: "Phim BL đầu tiên", category: "Tình cảm", genre: "Tình cảm · BL", description: "Thẻ mẫu — thông tin phim sẽ được cập nhật sau.", poster: "", video: "" },
-      { title: "Một câu chuyện dịu dàng", category: "Lãng mạn", genre: "Lãng mạn · BL", description: "Thẻ mẫu — những cuộc gặp gỡ có thể thay đổi mọi điều.", poster: "", video: "" },
-      { title: "Hẹn nhau dưới ánh đèn", category: "Thanh xuân", genre: "Thanh xuân · BL", description: "Thẻ mẫu — một câu chuyện đang chờ được giới thiệu.", poster: "", video: "" },
-      { title: "Khoảng cách gần hơn", category: "Tình cảm", genre: "Tình cảm · BL", description: "Thẻ mẫu — đôi khi điều khó nói nhất ở rất gần trái tim.", poster: "", video: "" }
-    ];
+    const films = window.GOC_PHIM_BL_FILMS || [];
 
     const moviesEl = document.getElementById("movies");
     const searchEl = document.getElementById("search");
